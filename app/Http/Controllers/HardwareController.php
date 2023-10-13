@@ -32,15 +32,8 @@ class HardwareController extends Controller
     public function show(Request $request)
     {
         $request->validate([
-            "card" => "sometimes|string",
-            "location" => "sometimes|string"
+            "card" => "sometimes|string"
         ]);
-
-        if ($request->has('location')) {
-            $location = new BusLocation;
-            $location->location = $request->location;
-            $location->save();
-        }
 
         if ($request->has('card')) {
             $user = User::where('card', $request->card)->first();
