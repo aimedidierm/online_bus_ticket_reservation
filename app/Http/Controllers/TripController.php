@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bus;
 use App\Models\Payment;
 use App\Models\Trip;
+use App\Rules\NotInPastDatetime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Paypack\Paypack;
@@ -91,7 +92,7 @@ class TripController extends Controller
             "name" => "required|string",
             "origin" => "required|string",
             "destination" => "required|string",
-            "datetime" => "required|date",
+            "datetime" => ["required", "date", new NotInPastDatetime],
             "price" => "required|numeric",
             "bus" => "required|integer",
         ]);

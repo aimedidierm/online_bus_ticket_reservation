@@ -10,12 +10,12 @@
 
 
 #define RST_PIN         D3
-#define SS_PIN          D4
+#define SS_PIN          D8
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 
-const char* ssid = "Balance";
-const char* password = "balance123";
+const char* ssid = "I have no life";
+const char* password = "1234567890";
 int buzzerPin = D0;
 String content = "";
 
@@ -93,7 +93,8 @@ void updateStatus() {
 
     Serial.println("[HTTPS] begin...");
 
-    if (http.begin(*client, "https://ruth.itaratec.com/api/status")) {  // HTTPS
+    if (http.begin(*client, "https://bus.itaratec.com/api/status")) {  // HTTPS
+      Serial.println(content);
       Serial.println("[HTTPS] POST...");
 
       http.addHeader("Content-Type", "application/json");
