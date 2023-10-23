@@ -48,7 +48,7 @@ class HardwareController extends Controller
                         $updatePayment->update();
                         return response()->json([
                             'card_allowed' => true,
-                            'message' => 'Ticket Found',
+                            'message' => 'Itike yabonetse',
                         ], 200);
                     }
                     $usedPayment = $payment->where('status', 'Used');
@@ -59,24 +59,24 @@ class HardwareController extends Controller
                         $updatePayment->update();
                         return response()->json([
                             'card_allowed' => true,
-                            'message' => 'Ticket Used',
+                            'message' => 'Yakoreshejwe',
                         ], 200);
                     } else {
                         return response()->json([
                             'card_allowed' => false,
-                            'message' => 'Ticket Unpaid',
+                            'message' => 'Ntiyishyuye',
                         ], 200);
                     }
                 } else {
                     return response()->json([
                         'card_allowed' => false,
-                        'message' => 'No ticket available',
+                        'message' => 'Ntiyakatishije',
                     ], 200);
                 }
             } else {
                 return response()->json([
                     'card_allowed' => false,
-                    'message' => 'Card not found',
+                    'message' => 'Ikarita ntirimo',
                 ], 200);
             }
         }
