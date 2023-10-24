@@ -32,6 +32,9 @@
                         Price
                     </th>
                     <th scope="col" class="px-6 py-3">
+                        Seat
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Status
                     </th>
                     <th scope="col" class="px-6 py-3">
@@ -64,6 +67,9 @@
                     </td>
                     <td class="px-6 py-4">
                         {{$trip->trip->price}} Rwf
+                    </td>
+                    <td class="px-6 py-4">
+                        {{$trip->seat ?? ''}}
                     </td>
                     <td class="px-6 py-4">
                         {{$trip->status}}

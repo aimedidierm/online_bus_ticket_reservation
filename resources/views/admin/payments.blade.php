@@ -29,6 +29,9 @@
                         Destination
                     </th>
                     <th scope="col" class="px-6 py-3">
+                        Seat
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Status
                     </th>
                 </tr>
@@ -55,6 +58,9 @@
                     </td>
                     <td class="px-6 py-4">
                         {{$payment->trip->origin}} To {{$payment->trip->destination}}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{$payment->seat ?? ''}}
                     </td>
                     <td class="px-6 py-4">
                         {{$payment->status}}

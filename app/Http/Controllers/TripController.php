@@ -57,6 +57,7 @@ class TripController extends Controller
             $payment->trip_id = $request->trip;
             $payment->amount = $trip->price;
             $payment->status = 'Payed';
+            $payment->seat = $trip->available_places;
             $payment->user_id = Auth::id();
             $payment->created_at = now();
             $payment->updated_at = null;
